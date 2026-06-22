@@ -1,5 +1,11 @@
 # Proyecto Integrador MQTT para 7 Compartimentos
 
+### Alumnos:
+#### Soria Gonzales Daniel
+#### Valverde Rojas Gustavo
+
+#### Grupo: 6CM3
+
 Sistema IoT completo para monitorear la apertura de siete compartimentos con `reed switch`, usando un `ESP32` como publisher, `Eclipse Mosquitto` como broker MQTT y un dashboard web como subscriber/actuador digital.
 
 ## Arquitectura
