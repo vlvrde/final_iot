@@ -4,9 +4,7 @@ Sistema IoT completo para monitorear la apertura de siete compartimentos con `re
 
 ## Arquitectura
 
-```
 <img width="1318" height="732" alt="image" src="https://github.com/user-attachments/assets/da3f6eda-2679-47e3-9d80-cfe0de1860c6" />
-```
 
 ## Árbol de tópicos MQTT
 
