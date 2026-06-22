@@ -3,7 +3,6 @@
 Sistema IoT completo para monitorear la apertura de siete compartimentos con `reed switch`, usando un `ESP32` como publisher, `Eclipse Mosquitto` como broker MQTT y un dashboard web como subscriber/actuador digital.
 
 ## Arquitectura
-<img width="1318" height="732" alt="image" src="https://github.com/user-attachments/assets/2ab27d57-2909-4d93-9922-b91547237f80" />
 
 ```mermaid
 <img width="1318" height="732" alt="image" src="https://github.com/user-attachments/assets/da3f6eda-2679-47e3-9d80-cfe0de1860c6" />
