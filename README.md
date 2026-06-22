@@ -1,7 +1,7 @@
 # Proyecto Integrador MQTT para 7 Compartimentos
 
 ### Alumnos:
-#### Soria Gonzales Daniel
+#### Soria González Daniel
 #### Valverde Rojas Gustavo
 
 #### Grupo: 6CM3
