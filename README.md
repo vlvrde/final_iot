@@ -1,16 +1,16 @@
 # Proyecto Integrador MQTT para 7 Compartimentos
 
+### Alumnos:
+#### Soria González Daniel
+#### Valverde Rojas Gustavo
+
+#### Grupo: 6CM3
+
 Sistema IoT completo para monitorear la apertura de siete compartimentos con `reed switch`, usando un `ESP32` como publisher, `Eclipse Mosquitto` como broker MQTT y un dashboard web como subscriber/actuador digital.
 
 ## Arquitectura
 
-```mermaid
-flowchart LR
-  A[ESP32 Publisher<br/>7 reed switch] -->|MQTT| B[Mosquitto Broker]
-  B --> C[Dashboard Subscriber]
-  C -->|Comandos MQTT| B
-  B -->|request-sync / monitoring| A
-```
+<img width="1318" height="732" alt="image" src="https://github.com/user-attachments/assets/da3f6eda-2679-47e3-9d80-cfe0de1860c6" />
 
 ## Árbol de tópicos MQTT
 
@@ -41,11 +41,11 @@ escom/iot/equipo7/reed-monitor/
 - `docs/reporte-tecnico.md`: base del reporte para exportar a PDF.
 - `tests/test_core.py`: pruebas unitarias de la lógica de alarmas.
 
-## Hardware sugerido
+## Hardware 
 
 - `ESP32`
 - `7` sensores `reed switch`
-- `7` resistencias no son necesarias si usas `INPUT_PULLUP`
+- `7` resistencias
 - magneto por compartimento
 - LED integrado del ESP32 como indicador local
 
@@ -174,23 +174,11 @@ ping -c 4 <ip-del-broker>
 mosquitto_sub -h <ip-del-broker> -t 'escom/iot/equipo7/reed-monitor/#' -v
 ```
 
-## Despliegue en Raspberry Pi o BeagleBone
+## Despliegue en Raspberry Pi 
 
-Si el broker corre en una SBC del laboratorio:
+1. Se conecta la placa a la misma red `SoriaDG`.
+2. Se instala `Docker` o `Mosquitto`.
+3. Levanta el broker con el repositorio.
+4. Se obtiene la IP del broker con `hostname -I`.
+5. Configurar esa IP en `firmware/esp32_reed_monitor/include/secrets.h`.
 
-1. Conecta la placa a la misma red `SoriaDG`.
-2. Instala `Docker` o `Mosquitto`.
-3. Levanta el broker con este repositorio.
-4. Obtén la IP del broker con `hostname -I`.
-5. Configura esa IP en `firmware/esp32_reed_monitor/include/secrets.h`.
-
-La contraseña que compartiste para la SBC puede usarse sólo en laboratorio; no la publiques si este repositorio se sube a GitHub.
-
-## Entregables cubiertos
-
-- firmware del embebido
-- broker MQTT configurable
-- suscriptor con interfaz digital
-- `docker-compose.yml` para puntos extra
-- `README.md` replicable
-- base de reporte técnico para convertir a PDF
